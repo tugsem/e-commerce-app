@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'cart', to: 'cart#show'
+  post 'cart/add', to: 'cart#add', as: 'cart_add'
+  delete 'cart/remove', to: 'cart#remove', as: 'cart_remove'
+
   resources :products
   # resources :users
   devise_for :users do

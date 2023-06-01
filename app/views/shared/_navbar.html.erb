@@ -42,10 +42,16 @@
       </div>
      </div>
     <div  class="nav-link ms-4">
-        <a href="#">
-          <i class="bi bi-basket3" style="font-size: 2rem;"></i>
-        </a>
-        <span class="badge border text-secondary border-secondary cart-count">0</span>
+        <%= link_to "", cart_path, class: "bi bi-basket3", style: "font-size: 2rem;" %>
+        <span class="badge border text-secondary border-secondary cart-count"><%= @cart.orderables.count %></span>
     </div>
   </div>
 </nav>
+
+<script>
+  $(document).on('ajax:success', function(event) {
+    if (event.detail[0].cart_count) {
+      $('#cart-link .cart-count').text(event.detail[0].cart_count);
+    }
+  });
+</script>

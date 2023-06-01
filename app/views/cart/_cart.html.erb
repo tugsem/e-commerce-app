@@ -1,0 +1,17 @@
+<a href="<%= products_path %>" class="btn btn-secondary back-btn">
+   <span class="bi bi-arrow-left"></span>
+</a>
+<%= turbo_frame_tag "cart" do %>
+<div class="container">
+  <div class="d-flex align-items-center justify-content-between">
+    <h4>Shopping Cart</h4>
+    <p class="text-end">Total Amount: <strong>$<%= @cart.total %></strong></p>
+  </div>
+  <% if @cart.orderables.count > 0 %>
+    <%= link_to "Proceed to checkout", class: "btn btn-success text-end"%>
+    <%= render "cart/orderables" %>
+  <% else %>
+    <h6 class="text-center bg-secondary bg-opacity-10 p-5 shadow">Your cart is empty.</h6>
+  <% end %>
+</div>
+<% end %>
