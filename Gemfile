@@ -75,7 +75,7 @@ group :test do
 end
 
 gem 'bootstrap', '~> 5.2', '>= 5.2.3'
-gem "bootstrap_form", "~> 5.2"
+gem 'bootstrap_form', '~> 5.2'
 gem 'cssbundling-rails', '~> 1.1'
 gem 'faker'
 

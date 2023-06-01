@@ -4,7 +4,7 @@
             <h5 class="card-title"><%= product.product_name %></h5>
             <p class="card-text"><%= product.description %></p>
             <p class="card-text"><strong>$<%= product.price %></strong></P>
-            <a href="#" class="btn btn-primary">Add to cart</a>
+            <%= link_to "Add to Cart", cart_items_path, method: "post",  class: "btn btn-primary ", product: product%>
         </div>
       </div>
 
