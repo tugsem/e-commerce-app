@@ -1,12 +1,10 @@
-<div id="<%= dom_id product %>">
-        <div class="card h-100">
+<div id="<%= dom_id product %>" class="card h-100 shadow-sm">
           <img src="<%= product.product_image %>" class="card-img-top" alt="<%= product.product_name %>">
           <div class="card-body">
             <h5 class="card-title"><%= product.product_name %></h5>
             <p class="card-text"><%= product.description %></p>
             <p class="card-text"><strong>$<%= product.price %></strong></P>
             <a href="#" class="btn btn-primary">Add to cart</a>
-          </div>
         </div>
       </div>
 

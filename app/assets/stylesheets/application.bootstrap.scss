@@ -1,10 +1,11 @@
 
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+@import "rails_bootstrap_forms";
 
 /* unvisited link */
 a {
-  color: black;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -18,8 +19,15 @@ a:active {
   align-items: center;
 }
 
+.card {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 .cart-count {
-  position: absolute;
+  position: relative;
   top: 0.5rem;
   right: 0.5rem;
   font-size: 0.8rem;
@@ -30,5 +38,5 @@ a:active {
 }
 
 .card-img-top:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }

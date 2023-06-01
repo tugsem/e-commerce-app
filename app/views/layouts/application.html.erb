@@ -12,8 +12,20 @@
   <body>
     <%= render partial: "shared/navbar" %>
     <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+       <% if notice.present? %>
+        <div class="alert alert-success">
+          <div class="bi bi-check-circle-fill me-2"></div>
+          <div><%= notice %></div>
+        </div>
+      <% end %>
+      <% if alert.present? %>
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+          <div class="bi bi-exclamation-triangle-fill me-2"></div>
+          <div>
+            <%= alert %>
+          </div>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
   </body>
