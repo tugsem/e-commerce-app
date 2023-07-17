@@ -5,4 +5,8 @@ class Cart < ApplicationRecord
   def total
     orderables.to_a.sum(&:total)
   end
+
+  def orderable_total
+    orderables.to_a.sum(&:quantity)
+  end
 end
