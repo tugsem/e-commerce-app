@@ -1,0 +1,2 @@
+<%# <%= turbo_stream.replace "cart-count", partial: 'cart-count', locals: {cart: @cart} %>
+<%= turbo_stream.replace "#{@orderable_id}", partial: 'orderable', locals: {orderable: @current_orderable, total: @current_orderable.total} %>
