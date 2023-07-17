@@ -13,13 +13,16 @@
             <h6 class="card-title"><%= product.product_name %></h6>
           </div>
           <div class="col d-flex align-items-center justify-content-between">
-            <%= form_with(url: cart_add_path, method: :post) do |f|%>
+
+            <%= form_with(url: cart_update_path, method: :put) do |f|%>
               <%= f.hidden_field :id, value: product.id %>
               <%= f.number_field :quantity, value: orderable.quantity, min: 0, style: "width: 50px;", class:"border rounded"%>
-              <%= f.submit "Add", class:"btn btn-sm btn-secondary"%>
+              <%= f.submit "Update", class:"btn btn-sm btn-secondary"%>
             <% end %>
+
             <%= button_to "", cart_remove_path(id: orderable.id), method: :delete, class: "bi bi-trash3", style: "all:unset; cursor:pointer;" %>
-            <p class="card-text" >$<%= orderable.total %></p>
+
+            <%= render 'orderable', orderable: orderable %>
           </div>
         </div>
       </div>
