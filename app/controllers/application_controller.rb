@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
   before_action :initialize_cart
+  before_action :authenticate_user!
 
   def initialize_cart
     @cart ||= Cart.find_by(id: session[:cart_id])
