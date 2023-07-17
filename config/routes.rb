@@ -1,15 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   get 'cart', to: 'cart#show'
-  post 'cart/add', to: 'cart#add', as: 'cart_add'
-  delete 'cart/remove', to: 'cart#remove', as: 'cart_remove'
+  put 'cart/update', to: 'cart#update', as: 'cart_update'
+  post 'cart/add', to: 'cart#create', as: 'cart_add'
+  delete 'cart/remove', to: 'cart#destroy', as: 'cart_remove'
 
   resources :products
-  # resources :users
-  devise_for :users do
-    get '/users/sign_out' => 'devise/sessions#destroy'
-  end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
   root "products#index"
 end

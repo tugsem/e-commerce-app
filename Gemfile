@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.4"
+ruby "3.2.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
@@ -29,7 +29,7 @@ gem 'jbuilder'
 
 gem 'devise'
 # Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
+gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -74,7 +74,8 @@ group :test do
   gem 'webdrivers'
 end
 
-gem 'bootstrap', '~> 5.2', '>= 5.2.3'
+gem 'sass-rails'
+gem 'bootstrap-sass'
 gem 'bootstrap_form', '~> 5.2'
 gem 'cssbundling-rails', '~> 1.1'
 gem 'faker'

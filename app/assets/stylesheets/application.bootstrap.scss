@@ -1,7 +1,8 @@
-
-@import 'bootstrap/scss/bootstrap';
-@import 'bootstrap-icons/font/bootstrap-icons';
-@import "rails_bootstrap_forms";
+// app/assets/stylesheets/application.scss
+// @import "bootstrap-sprockets";
+@import "bootstrap";
+// @import 'bootstrap/scss/bootstrap';
+// @import 'bootstrap-icons';
 
 /* unvisited link */
 a {
@@ -39,4 +40,9 @@ a:active {
 
 .card-img-top:hover {
   transform: scale(1.1);
+}
+
+turbo-frame {
+  display: block;
+  border: 2px solid blue;
 }
