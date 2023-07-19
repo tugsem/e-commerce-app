@@ -11,3 +11,7 @@ Rails.application.config.assets.precompile += %w(bootstrap.min.js popper.js)
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
+
+
+#Solved icon error: (ActionController::RoutingError (No route matches [GET] "/fonts/bootstrap-icons.woff2")
+Rails.application.config.assets.paths << Rails.root.join("node_modules/bootstrap-icons/font")
