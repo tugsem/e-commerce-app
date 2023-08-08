@@ -16,7 +16,7 @@
 
             <%= form_with(url: cart_update_path, method: :put) do |f|%>
               <%= f.hidden_field :id, value: product.id %>
-              <%= f.number_field :quantity, value: orderable.quantity, min: 1, style: "width: 50px;", class:"border rounded"%>
+              <%= f.number_field :quantity, value: orderable.quantity, min: 1, max: 10, style: "width: 50px;", class:"border rounded"%>
               <%= f.submit "Update", class:"btn btn-sm btn-secondary"%>
             <% end %>
 
