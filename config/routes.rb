@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'checkout', to: 'checkouts#show', as: 'checkout'
   get 'checkout/success', to: 'checkouts#success'
   get 'checkout/failure', to: 'checkouts#failure'
-  get 'billing', to: 'billimng#show'
+  get 'billing', to: 'billing#show'
 
   get 'cart', to: 'cart#show'
   put 'cart/update', to: 'cart#update', as: 'cart_update'

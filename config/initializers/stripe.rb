@@ -1,6 +1,1 @@
-Rails.configuration.stripe = {
-  :publishable_key => ENV['pk_test_KEY'],
-  :secret_key      => ENV['sk_test_KEY']
-}
-
-Stripe.api_key = Rails.configuration.stripe[:secret_key]
+Stripe.api_key = Rails.application.credentials.stripe[secret_key]
