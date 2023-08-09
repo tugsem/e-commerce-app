@@ -81,4 +81,5 @@ gem 'cssbundling-rails', '~> 1.1'
 gem 'faker'
 
 gem 'jsbundling-rails', '~> 1.1'
-gem 'stripe'
+gem "stripe", "~> 8.0"
+gem "pay", "~> 6.7"

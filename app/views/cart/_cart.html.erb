@@ -8,7 +8,7 @@
     <%= render 'cart-total' %>
   </div>
   <% if @cart.orderables.count > 0 %>
-    <%= link_to "Proceed to checkout", class: "btn btn-success text-end"%>
+    <%= link_to "Proceed to checkout", checkout_path, class: "btn btn-success text-end"%>
     <%= render "orderables"%>
   <% else %>
     <h6 class="text-center bg-secondary bg-opacity-10 p-5 shadow">Your cart is empty.</h6>
