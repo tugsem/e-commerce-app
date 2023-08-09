@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
+  require "stripe"
+
   before_action :initialize_cart
   before_action :authenticate_user!
+
 
   def initialize_cart
     @cart ||= Cart.find_by(id: session[:cart_id])
@@ -11,3 +14,4 @@ class ApplicationController < ActionController::Base
     session[:cart_id] = @cart.id
   end
 end
+
