@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  require "stripe"
-
   before_action :initialize_cart
   before_action :authenticate_user!
 
