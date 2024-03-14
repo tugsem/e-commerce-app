@@ -9,8 +9,6 @@
   </div>
   <% if @cart.orderables.count > 0 %>
     <%= link_to "Proceed to checkout", checkout_path, class: "btn btn-success text-end" %>
-    # <button data-action="click->cart#checkout">Checkout</button>
-    # <button data-action="click->cart#clearCart">Clear</button>
     <%= render "orderables"%>
   <% else %>
     <h6 class="text-center bg-secondary bg-opacity-10 p-5 shadow">Your cart is empty.</h6>

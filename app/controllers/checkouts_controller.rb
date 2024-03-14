@@ -9,7 +9,6 @@ class CheckoutsController < ApplicationController
     line_items = @cart.orderables.map do |orderable|
       product = Product.find(orderable["product_id"])
       total = orderable.total
-      puts total
       {
         quantity: orderable["quantity"].to_i,
         price_data: {
@@ -19,7 +18,7 @@ class CheckoutsController < ApplicationController
               product_id: product.id,
             }},
             currency: "usd",
-            unit_amount: total.to_i*10,
+            unit_amount: total.to_i*100,
           }
         }
     end
