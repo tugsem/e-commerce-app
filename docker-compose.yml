@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: pass
       POSTGRES_DB:  e-commerce_development
     ports:
-      - 3000:3000
+      - 5432:5432
     volumes:
       - db_data:/var/lib/postgresql/data
   web:
