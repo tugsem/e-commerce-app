@@ -1,0 +1,35 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB:  e-commerce_development
+    ports:
+      - 5432:5432
+    volumes:
+      - db_data:/var/lib/postgresql/data
+  web:
+    image: ruby:3.2.2
+    build: .
+    volumes:
+    - .:/app
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    command: bash -c "bundle exec rails db:migrate RAILS_ENV=development && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    environment:
+      RAILS_ENV: development
+      DATABASE_USERNAME: myuser
+      DATABASE_PASSWORD: pass
+      DATABASE_HOST: postgres
+      DATABASE_URL: postgres://myuser:pass@db:5432/e-commerce_development
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h db -p 5432"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+volumes:
+  db_data:
