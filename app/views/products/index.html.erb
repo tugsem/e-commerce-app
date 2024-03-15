@@ -1,0 +1,10 @@
+<div class="container">
+<h2>Products</h2>
+  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+    <% @products.each do |product| %>
+      <div class="col">
+        <%= render product %>
+      </div>
+    <% end %>
+ </div>
+</div>

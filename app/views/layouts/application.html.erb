@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ECommerceApp</title>
+    <title>RandShop</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render partial: "shared/navbar" %>
+    <div class="container">
+       <% if notice.present? %>
+        <div class="alert alert-success d-flex">
+          <div class="bi bi-check-circle-fill me-2"></div>
+          <div><%= notice %></div>
+        </div>
+      <% end %>
+      <% if alert.present? %>
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+          <div class="bi bi-exclamation-triangle-fill me-2"></div>
+          <div>
+            <%= alert %>
+          </div>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

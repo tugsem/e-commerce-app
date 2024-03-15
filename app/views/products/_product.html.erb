@@ -1,0 +1,13 @@
+<div id="<%= dom_id product %>" class="card h-100 shadow-sm">
+          <%= link_to product_path(product.id) do %>
+          <img src="<%= product.product_image %>" class="card-img-top" alt="<%= product.product_name %>">
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= product.product_name %></h5>
+            <p class="card-text"><%= product.description %></p>
+            <p class="card-text"><strong>$<%= product.price %></strong></P>
+            <%= button_to "Add to Cart", cart_add_path(id: product.id, quantity: 1), method: :post, class:"btn btn-secondary"%>
+        </div>
+
+      </div>
+

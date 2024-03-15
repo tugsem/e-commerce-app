@@ -1,0 +1,31 @@
+<% @cart.orderables.each do |orderable| %>
+  <% product = orderable.product %>
+  <div id="<%= "cart-#{product.id}" %>" class="my-3 shadow d-flex align-items-center">
+    <div class="row g-3 d-flex align-items-center">
+      <div class="col-md-4">
+        <%= link_to product_path(product.id) do %>
+          <img src="<%= product.product_image %>" class="img-fluid rounded" alt="<%= product.product_name %>" >
+        <% end %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body row mx-3">
+          <div class="col">
+            <h6 class="card-title"><%= product.product_name %></h6>
+          </div>
+          <div class="col d-flex align-items-center justify-content-between">
+
+            <%= form_with(url: cart_update_path, method: :put) do |f|%>
+              <%= f.hidden_field :id, value: product.id %>
+              <%= f.number_field :quantity, value: orderable.quantity, min: 1, max: 10, style: "width: 50px;", class:"border rounded"%>
+              <%= f.submit "Update", class:"btn btn-sm btn-secondary"%>
+            <% end %>
+
+            <%= button_to "", cart_remove_path(id: orderable.id), method: :delete, class: "bi bi-trash3", style: "all:unset; cursor:pointer;" %>
+
+            <%= render 'orderable', orderable: orderable %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<a href="<%= products_path %>" class="btn btn-secondary back-btn">
+   <span class="bi bi-arrow-left"></span>
+</a>
+
+<div class="container" data-controller="cart">
+  <div class="d-flex align-items-center justify-content-between">
+    <h4>Shopping Cart</h4>
+    <%= render 'cart-total' %>
+  </div>
+  <% if @cart.orderables.count > 0 %>
+    <%= link_to "Proceed to checkout", checkout_path, class: "btn btn-success text-end" %>
+    <%= render "orderables"%>
+  <% else %>
+    <h6 class="text-center bg-secondary bg-opacity-10 p-5 shadow">Your cart is empty.</h6>
+  <% end %>
+</div>
