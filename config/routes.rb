@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   put 'cart/update', to: 'cart#update', as: 'cart_update'
   post 'cart/add', to: 'cart#create', as: 'cart_add'
   delete 'cart/remove', to: 'cart#destroy', as: 'cart_remove'
+  post "webhooks" => "webhooks#stripe"
 
   resources :products
 
